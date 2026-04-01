@@ -1,0 +1,82 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - heading "決算データ可視化" [level=1] [ref=e5]
+      - paragraph [ref=e6]: 企業の売上・営業利益・純利益を比較分析 — CoDD Verification Demo
+    - main [ref=e7]:
+      - generic [ref=e8]:
+        - heading "企業を選択" [level=2] [ref=e9]
+        - generic [ref=e10]:
+          - button "トヨタ自動車 (7203.T)" [active] [ref=e11]
+          - button "ソフトバンクG (9984.T)" [ref=e12]
+          - button "ソニーグループ (6758.T)" [ref=e13]
+          - button "Apple (AAPL)" [ref=e14]
+          - button "Microsoft (MSFT)" [ref=e15]
+          - button "Alphabet (GOOGL)" [ref=e16]
+      - generic [ref=e21]:
+        - button "売上高" [ref=e22]
+        - button "営業利益" [ref=e23]
+        - button "純利益" [ref=e24]
+      - generic [ref=e26]:
+        - heading "企業比較 — 売上高" [level=3] [ref=e27]
+        - generic [ref=e29]:
+          - list [ref=e31]:
+            - listitem [ref=e32]:
+              - img "Toyota Motor Corporation legend icon" [ref=e33]
+              - text: Toyota Motor Corporation
+          - application [ref=e35]:
+            - generic [ref=e63]:
+              - generic [ref=e64]:
+                - generic [ref=e66]: 2022年
+                - generic [ref=e68]: 2023年
+                - generic [ref=e70]: 2024年
+                - generic [ref=e72]: 2025年
+              - generic [ref=e73]:
+                - generic [ref=e75]: 0億
+                - generic [ref=e77]: 15.0兆
+                - generic [ref=e79]: 30.0兆
+                - generic [ref=e81]: 45.0兆
+                - generic [ref=e83]: 60.0兆
+      - generic [ref=e84]:
+        - heading "売上推移" [level=3] [ref=e85]
+        - generic [ref=e86]:
+          - heading "Toyota Motor Corporation — 売上高" [level=3] [ref=e87]
+          - generic [ref=e89]:
+            - list [ref=e91]:
+              - listitem [ref=e92]:
+                - img "売上高 legend icon" [ref=e93]
+                - text: 売上高
+            - application [ref=e95]:
+              - generic [ref=e117]:
+                - generic [ref=e118]:
+                  - generic [ref=e120]: 2022年
+                  - generic [ref=e122]: 2023年
+                  - generic [ref=e124]: 2024年
+                  - generic [ref=e126]: 2025年
+                - generic [ref=e127]:
+                  - generic [ref=e129]: 0億
+                  - generic [ref=e131]: 15.0兆
+                  - generic [ref=e133]: 30.0兆
+                  - generic [ref=e135]: 45.0兆
+                  - generic [ref=e137]: 60.0兆
+      - generic [ref=e139]:
+        - heading "Toyota Motor Corporation" [level=3] [ref=e140]
+        - generic [ref=e141]:
+          - generic [ref=e142]: TSE
+          - generic [ref=e143]: 7203.T
+        - generic [ref=e144]:
+          - paragraph [ref=e145]: 2025年度 実績
+          - generic [ref=e146]:
+            - generic [ref=e147]: 売上高
+            - generic [ref=e148]: 48.0兆円
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - text: 営業利益
+              - generic [ref=e151]: (10.0%)
+            - generic [ref=e152]: 4.8兆円
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - text: 純利益
+              - generic [ref=e155]: (9.9%)
+            - generic [ref=e156]: 4.8兆円
+  - generic [ref=e157]: 0億

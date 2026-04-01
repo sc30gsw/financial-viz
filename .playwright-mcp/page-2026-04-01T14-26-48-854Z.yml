@@ -1,0 +1,18 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "決算データ可視化" [level=1] [ref=e5]
+    - paragraph [ref=e6]: 企業の売上・営業利益・純利益を比較分析 — CoDD Verification Demo
+  - main [ref=e7]:
+    - generic [ref=e8]:
+      - heading "企業を選択" [level=2] [ref=e9]
+      - generic [ref=e10]:
+        - button "トヨタ自動車 (7203.T)" [ref=e11]
+        - button "ソフトバンクG (9984.T)" [ref=e12]
+        - button "ソニーグループ (6758.T)" [ref=e13]
+        - button "Apple (AAPL)" [ref=e14]
+        - button "Microsoft (MSFT)" [ref=e15]
+        - button "Alphabet (GOOGL)" [ref=e16]
+    - generic [ref=e17]:
+      - generic [ref=e18]: 📊
+      - paragraph [ref=e19]: 上の企業ボタンをクリックして比較を開始
+      - paragraph [ref=e20]: 複数の企業を選択して決算データを比較できます
