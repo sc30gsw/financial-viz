@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-04-01T13:30:38.037Z",
+  "sprint": 5,
+  "phase": "1a",
+  "event": "coherence-scan-initial",
+  "description": "Initial CEG scan after adding req:api-fetching and design:fetch-layer specs",
+  "summary": {
+    "nodeCount": 16,
+    "edgeCount": 45,
+    "green": 0,
+    "amber": 45,
+    "gray": 0,
+    "hasCycles": false,
+    "cycles": []
+  },
+  "newNodes": [
+    "req:api-fetching",
+    "design:fetch-layer"
+  ],
+  "previousNodeCount": 14,
+  "previousEdgeCount": 37,
+  "deltaNodes": 2,
+  "deltaEdges": 8,
+  "verification": {
+    "hasCycles": false,
+    "greenBandNote": "All amber: single-frontmatter edges have evidenceCount=1, green requires >=2"
+  }
+}

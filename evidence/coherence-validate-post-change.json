@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-04-01T13:39:43.044Z",
+  "sprint": 5,
+  "phase": "2b-mid-change",
+  "event": "coherence-validate-post-change",
+  "description": "Coherence validation after requirement change (REQ-AF-005, REQ-AF-006, schema fields)",
+  "summary": {
+    "nodeCount": 16,
+    "edgeCount": 45,
+    "green": 0,
+    "amber": 45,
+    "gray": 0,
+    "hasCycles": false,
+    "cycles": []
+  },
+  "cycleDetection": {
+    "cycles": [],
+    "verdict": "PASS: no cycles"
+  },
+  "coherenceValidation": {
+    "ok": true,
+    "warnings": [],
+    "errors": [],
+    "cycles": []
+  },
+  "overallVerdict": "COHERENCE VALID"
+}

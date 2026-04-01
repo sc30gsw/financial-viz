@@ -1,0 +1,25 @@
+phase: feedback routing
+timestamp: 2026-04-01T07:36:30.000Z
+
+adversary_findings: F1, F2, F3, F4, F5, F6
+
+routing_decision:
+  earliest_phase: 2a (TDD)
+  rationale: |
+    F1, F3, F4, F6 have "missing tests" component.
+    Per VCSDD feedback rule: route to earliest affected phase.
+    Phase 2a (TDD) is earlier than 2b (Impl), so tests are added first.
+    After adding YoY tests (RED), then fix implementation in 2b.
+
+actions:
+  phase_2a:
+    - Add YoY tests to src/__tests__/trend-chart.test.tsx:
+        * buildTrendChartData(mode='yoyGrowth') returns values matching normalizeToGrowthRate()
+        * companies with <2yr data appear in excludedCompanies
+        * companies with >=2yr data appear in data entries
+        * TrendChart renders mode toggle buttons (絶対値/前年比%)
+        * clicking 前年比% shows excluded company note when applicable
+  phase_2b:
+    - Implement buildTrendChartData(mode='yoyGrowth') using normalizeToGrowthRate()
+    - Add mode toggle state and buttons to TrendChart.tsx
+    - Wire mode toggle to buildTrendChartData call with current mode

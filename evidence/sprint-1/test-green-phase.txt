@@ -1,0 +1,13 @@
+
+> financial-viz@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.2 /Users/kakikaito/dev/ai/financial-viz
+
+
+ Test Files  3 passed (3)
+      Tests  21 passed (21)
+   Start at  20:47:15
+   Duration  1.52s (transform 688ms, setup 979ms, import 364ms, tests 28ms, environment 2.33s)
+

@@ -1,0 +1,477 @@
+{
+  "featureName": "financial-viz",
+  "mode": "lean",
+  "language": "typescript",
+  "currentPhase": "complete",
+  "phaseHistory": [
+    {
+      "from": "init",
+      "to": "1a",
+      "timestamp": "2026-04-01T11:43:27.046Z",
+      "reason": "Start spec crystallization"
+    },
+    {
+      "from": "1a",
+      "to": "1b",
+      "timestamp": "2026-04-01T11:43:54.008Z",
+      "reason": "Behavioral spec complete, writing verification architecture"
+    },
+    {
+      "from": "1b",
+      "to": "1c",
+      "timestamp": "2026-04-01T11:43:54.012Z",
+      "reason": "Verification architecture complete, starting spec review"
+    },
+    {
+      "from": "1c",
+      "to": "2a",
+      "timestamp": "2026-04-01T11:44:06.661Z",
+      "reason": "Start TDD: generate failing tests",
+      "sprint": 1
+    },
+    {
+      "from": "2a",
+      "to": "2b",
+      "timestamp": "2026-04-01T11:49:18.427Z",
+      "reason": "Red phase complete - all 21 tests failing as expected. Starting implementation.",
+      "sprint": 1
+    },
+    {
+      "from": "2b",
+      "to": "2c",
+      "timestamp": "2026-04-01T11:49:18.434Z",
+      "reason": "All 21 tests passing (green). Starting refactor phase.",
+      "sprint": 1
+    },
+    {
+      "from": "2c",
+      "to": "3",
+      "timestamp": "2026-04-01T11:49:42.851Z",
+      "reason": "Refactor complete. All tests still passing. Ready for adversary review.",
+      "sprint": 1
+    },
+    {
+      "from": "3",
+      "to": "5",
+      "timestamp": "2026-04-01T11:50:03.830Z",
+      "reason": "Adversary review PASS. Proceeding to formal hardening (Tier 0).",
+      "sprint": 1
+    },
+    {
+      "from": "5",
+      "to": "6",
+      "timestamp": "2026-04-01T11:50:45.543Z",
+      "reason": "Phase 5 complete. All hardening artifacts generated.",
+      "sprint": 1
+    },
+    {
+      "from": "6",
+      "to": "complete",
+      "timestamp": "2026-04-01T11:54:01.485Z",
+      "reason": "All convergence conditions met. Sprint 1 complete.",
+      "sprint": 1
+    },
+    {
+      "from": "complete",
+      "to": "3",
+      "timestamp": "2026-04-01T12:00:00.000Z",
+      "reason": "Sprint 2: Starting new adversary review cycle to validate sector analysis requirement gap.",
+      "sprint": 2
+    },
+    {
+      "from": "3",
+      "to": "4",
+      "timestamp": "2026-04-01T12:00:06.551Z",
+      "reason": "Missing sector analysis affects design:data-schema and design:ui-components",
+      "sprint": 2
+    },
+    {
+      "from": "4",
+      "to": "1a",
+      "timestamp": "2026-04-01T12:00:06.554Z",
+      "reason": "Missing sector analysis affects design:data-schema and design:ui-components",
+      "sprint": 2
+    },
+    {
+      "from": "1a",
+      "to": "1b",
+      "timestamp": "2026-04-01T12:06:32.330Z",
+      "reason": "Sector analysis spec added. Updating verification architecture.",
+      "sprint": 2
+    },
+    {
+      "from": "1b",
+      "to": "1c",
+      "timestamp": "2026-04-01T12:06:32.333Z",
+      "reason": "Verification architecture updated for sector analysis.",
+      "sprint": 2
+    },
+    {
+      "from": "1c",
+      "to": "2a",
+      "timestamp": "2026-04-01T12:06:39.783Z",
+      "reason": "Start Sprint 2: sector analysis TDD - red phase",
+      "sprint": 2
+    },
+    {
+      "from": "2a",
+      "to": "2b",
+      "timestamp": "2026-04-01T12:08:14.631Z",
+      "reason": "Red phase complete - sector analysis tests failing. Starting implementation.",
+      "sprint": 2
+    },
+    {
+      "from": "2b",
+      "to": "2c",
+      "timestamp": "2026-04-01T12:09:54.771Z",
+      "reason": "All 27 tests passing. Starting refactor.",
+      "sprint": 2
+    },
+    {
+      "from": "2c",
+      "to": "3",
+      "timestamp": "2026-04-01T12:10:03.154Z",
+      "reason": "Refactor complete. Ready for Sprint 2 adversary review.",
+      "sprint": 2
+    },
+    {
+      "from": "3",
+      "to": "5",
+      "timestamp": "2026-04-01T12:10:03.159Z",
+      "reason": "Sprint 2 adversary PASS. Proceeding to hardening.",
+      "sprint": 2
+    },
+    {
+      "from": "5",
+      "to": "6",
+      "timestamp": "2026-04-01T12:10:39.209Z",
+      "reason": "Sprint 2 hardening complete. 27/27 tests, sector analysis artifacts ready.",
+      "sprint": 2
+    },
+    {
+      "from": "6",
+      "to": "complete",
+      "timestamp": "2026-04-01T12:12:09.141Z",
+      "reason": "Sprint 2 complete: sector analysis implemented, 27/27 tests, FIND-001 resolved.",
+      "sprint": 2
+    },
+    {
+      "from": "complete",
+      "to": "1a",
+      "timestamp": "2026-04-01T12:12:30.000Z",
+      "reason": "Sprint 3: Data schema change test - flat to nested JSON structure",
+      "sprint": 3
+    },
+    {
+      "from": "1a",
+      "to": "1b",
+      "timestamp": "2026-04-01T12:13:48.541Z",
+      "reason": "Updated verification arch for Sprint 3",
+      "sprint": 3
+    },
+    {
+      "from": "1b",
+      "to": "1c",
+      "timestamp": "2026-04-01T12:13:48.545Z",
+      "reason": "Spec review for Sprint 3",
+      "sprint": 3
+    },
+    {
+      "from": "1c",
+      "to": "2a",
+      "timestamp": "2026-04-01T12:14:22.544Z",
+      "reason": "Sprint 3: Cycle fixed. Data schema nested JSON test phase.",
+      "sprint": 3
+    },
+    {
+      "from": "2a",
+      "to": "2b",
+      "timestamp": "2026-04-01T12:14:50.292Z",
+      "reason": "Sprint 3: schema change implemented (backward-compatible).",
+      "sprint": 3
+    },
+    {
+      "from": "2b",
+      "to": "2c",
+      "timestamp": "2026-04-01T12:15:00.660Z",
+      "reason": "All 27 tests passing.",
+      "sprint": 3
+    },
+    {
+      "from": "2c",
+      "to": "3",
+      "timestamp": "2026-04-01T12:15:44.848Z",
+      "reason": "Sprint 3 adversary review (cycle detection CoDD test).",
+      "sprint": 3
+    },
+    {
+      "from": "3",
+      "to": "5",
+      "timestamp": "2026-04-01T12:15:44.852Z",
+      "reason": "Sprint 3 adversary PASS.",
+      "sprint": 3
+    },
+    {
+      "from": "5",
+      "to": "6",
+      "timestamp": "2026-04-01T12:16:06.648Z",
+      "reason": "Sprint 3 hardening complete.",
+      "sprint": 3
+    },
+    {
+      "from": "6",
+      "to": "complete",
+      "timestamp": "2026-04-01T12:16:37.477Z",
+      "reason": "Sprint 3 complete: cycle detection verified, 27/27 tests.",
+      "sprint": 3
+    },
+    {
+      "from": "complete",
+      "to": "1a",
+      "timestamp": "2026-04-01T12:17:00.000Z",
+      "reason": "Sprint 4: Realtime price feature + dangling reference test",
+      "sprint": 4
+    },
+    {
+      "from": "1a",
+      "to": "1b",
+      "timestamp": "2026-04-01T12:18:31.515Z",
+      "reason": "Sprint 4: Realtime price arch.",
+      "sprint": 4
+    },
+    {
+      "from": "1b",
+      "to": "1c",
+      "timestamp": "2026-04-01T12:18:40.679Z",
+      "reason": "Sprint 4: Spec review for realtime price.",
+      "sprint": 4
+    },
+    {
+      "from": "1c",
+      "to": "2a",
+      "timestamp": "2026-04-01T12:18:40.687Z",
+      "reason": "Sprint 4: TDD for realtime price. 14-node CEG validated.",
+      "sprint": 4
+    },
+    {
+      "from": "2a",
+      "to": "2b",
+      "timestamp": "2026-04-01T12:20:23.579Z",
+      "reason": "Sprint 4: realtime price implemented.",
+      "sprint": 4
+    },
+    {
+      "from": "2b",
+      "to": "2c",
+      "timestamp": "2026-04-01T12:20:49.901Z",
+      "reason": "All 30 tests passing.",
+      "sprint": 4
+    },
+    {
+      "from": "2c",
+      "to": "3",
+      "timestamp": "2026-04-01T12:20:49.905Z",
+      "reason": "Sprint 4 adversary review.",
+      "sprint": 4
+    },
+    {
+      "from": "3",
+      "to": "5",
+      "timestamp": "2026-04-01T12:20:49.908Z",
+      "reason": "Sprint 4 hardening.",
+      "sprint": 4
+    },
+    {
+      "from": "5",
+      "to": "6",
+      "timestamp": "2026-04-01T12:21:19.959Z",
+      "reason": "Sprint 4 Phase 6 - All 13 CoDD verifications complete.",
+      "sprint": 4
+    },
+    {
+      "from": "6",
+      "to": "complete",
+      "timestamp": "2026-04-01T12:21:50.938Z",
+      "reason": "Sprint 4 complete: all 13 CoDD verifications done, 30/30 tests, 14-node CEG.",
+      "sprint": 4
+    },
+    {
+      "from": "complete",
+      "to": "1a",
+      "timestamp": "2026-04-01T12:30:00.000Z",
+      "reason": "Sprint 5: Replace mock DEMO_DATA with TanStack Query + up-fetch. CoDD verification of mid-spec changes.",
+      "sprint": 5
+    },
+    {
+      "from": "1a",
+      "to": "2a",
+      "timestamp": "2026-04-01T13:30:38.000Z",
+      "reason": "Sprint 5: Spec crystallized (req-api-fetching, design-fetch-layer). CEG scan 1 captured (16 nodes, 45 edges).",
+      "sprint": 5
+    },
+    {
+      "from": "2a",
+      "to": "2b",
+      "timestamp": "2026-04-01T13:35:00.000Z",
+      "reason": "Sprint 5: Red phase — 9 new tests failing as expected.",
+      "sprint": 5
+    },
+    {
+      "from": "2b",
+      "to": "2c",
+      "timestamp": "2026-04-01T13:38:00.000Z",
+      "reason": "Sprint 5: Green — installed @tanstack/react-query + up-fetch, created fetch-client, useFinancialQuery, QueryProvider, Express server. 38 tests passing.",
+      "sprint": 5
+    },
+    {
+      "from": "2c",
+      "to": "2b",
+      "timestamp": "2026-04-01T13:39:00.000Z",
+      "reason": "Sprint 5 mid-change: Added REQ-AF-005 (cache TTL 5min, stale-while-revalidate) and REQ-AF-006 (retry x3, keepPreviousData) to req-api-fetching. Added fetchedAt/isStale to design-data-schema. CoDD impact analysis: data-schema change propagated to 6 nodes (BFS verified).",
+      "sprint": 5
+    },
+    {
+      "from": "2b",
+      "to": "complete",
+      "timestamp": "2026-04-01T13:42:05.000Z",
+      "reason": "Sprint 5 complete: 40/40 tests, 16-node CEG stable, CoDD verified. 4 evidence snapshots captured.",
+      "sprint": 5
+    },
+    {
+      "from": "complete",
+      "to": "1a",
+      "timestamp": "2026-04-01T07:16:00.000Z",
+      "reason": "Sprint 6: TrendChart (multi-company line chart) + CoDD 2-change propagation verification + adversary FAIL/PASS review test.",
+      "sprint": 6
+    },
+    {
+      "from": "1a",
+      "to": "2a",
+      "timestamp": "2026-04-01T07:32:00.000Z",
+      "reason": "Sprint 6: Spec phase complete (req:multi-trend, module:trend-renderer, 2 CoDD propagation scans). CEG 18 nodes / 52 edges. spec-review PASS.",
+      "sprint": 6
+    },
+    {
+      "from": "2a",
+      "to": "2b",
+      "timestamp": "2026-04-01T07:33:00.000Z",
+      "reason": "Sprint 6: Red phase — 18 tests created (absolute+marker). Intentionally no YoY tests yet.",
+      "sprint": 6
+    },
+    {
+      "from": "2b",
+      "to": "3",
+      "timestamp": "2026-04-01T07:36:00.000Z",
+      "reason": "Sprint 6: Green (absolute+marker only). YoY intentionally unimplemented. Ready for adversary FAIL test.",
+      "sprint": 6
+    },
+    {
+      "from": "3",
+      "to": "4",
+      "timestamp": "2026-04-01T07:36:30.000Z",
+      "reason": "Sprint 6: Adversary FAIL as expected (6 findings: F1-F6, all YoY-related). Routing via /vcsdd-feedback.",
+      "sprint": 6
+    },
+    {
+      "from": "4",
+      "to": "2a",
+      "timestamp": "2026-04-01T07:37:00.000Z",
+      "reason": "Sprint 6: Feedback routed to Phase 2a (tests first). Adding YoY tests.",
+      "sprint": 6
+    },
+    {
+      "from": "2a",
+      "to": "2b",
+      "timestamp": "2026-04-01T07:38:00.000Z",
+      "reason": "Sprint 6: YoY tests added (RED). Implementing YoY in 2b.",
+      "sprint": 6
+    },
+    {
+      "from": "2b",
+      "to": "3",
+      "timestamp": "2026-04-01T07:41:00.000Z",
+      "reason": "Sprint 6: YoY + mode toggle implemented. 71 tests passing. Re-running adversary.",
+      "sprint": 6
+    },
+    {
+      "from": "3",
+      "to": "5",
+      "timestamp": "2026-04-01T07:42:30.000Z",
+      "reason": "Sprint 6: Adversary PASS (4th run). All 16 req/PROPs covered.",
+      "sprint": 6
+    },
+    {
+      "from": "5",
+      "to": "6",
+      "timestamp": "2026-04-01T07:43:00.000Z",
+      "reason": "Sprint 6: Hardening complete. 71 tests, 18-node CEG.",
+      "sprint": 6
+    },
+    {
+      "from": "6",
+      "to": "complete",
+      "timestamp": "2026-04-01T07:44:00.000Z",
+      "reason": "Sprint 6 complete: TrendChart implemented, 2-CoDD-change test verified, adversary FAIL→PASS validated. E15-E23 evidence captured.",
+      "sprint": 6
+    }
+  ],
+  "iterations": {
+    "3": 2,
+    "4": 1,
+    "5": 2,
+    "6": 2,
+    "1a": 4,
+    "1b": 1,
+    "1c": 3,
+    "2a": 3,
+    "2b": 1,
+    "2c": 2,
+    "complete": 2
+  },
+  "proofObligations": [],
+  "traceability": {
+    "epicId": "VCSDD-financial-viz-1775043552985",
+    "beads": [
+      {
+        "beadId": "BEAD-001",
+        "type": "adversary-finding",
+        "artifactPath": ".vcsdd/features/financial-viz/reviews/sprint-1/output/findings/FIND-001.json",
+        "status": "resolved",
+        "linkedBeads": [],
+        "createdAt": "2026-04-01T12:00:06.000Z",
+        "createdInPhase": "4",
+        "externalId": "FIND-001"
+      }
+    ]
+  },
+  "gates": {
+    "3": {
+      "verdict": "PASS",
+      "timestamp": "2026-04-01T12:20:49.907Z",
+      "reviewedBy": "adversary",
+      "details": {
+        "findingCount": 0,
+        "summary": "Sprint 4 final: 14-node CEG, 30/30 tests, all 13 CoDD validations complete."
+      }
+    },
+    "1c": {
+      "verdict": "PASS",
+      "timestamp": "2026-04-01T11:43:54.014Z",
+      "reviewedBy": "adversary",
+      "details": {
+        "dimensions": {
+          "spec_fidelity": "PASS",
+          "edge_case_coverage": "PASS",
+          "verification_readiness": "PASS"
+        },
+        "summary": "Spec covers all requirements. 11-node coherence graph is well-structured with clean 3-layer hierarchy."
+      },
+      "adversaryVerdict": "PASS",
+      "adversaryReviewedAt": "2026-04-01T11:43:54.014Z"
+    }
+  },
+  "sprintCount": 6,
+  "currentPhase": "complete",
+  "createdAt": "2026-04-01T11:39:12.984Z",
+  "updatedAt": "2026-04-01T07:44:00.000Z"
+}

@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-04-02T07:24:00.000Z",
+  "sprint": 6,
+  "phase": "1b_yoy_change",
+  "changedNode": "req:multi-trend",
+  "changeDescription": "Spec change #2: Added REQ-MT-005/005a/005b: YoY% mode toggle using normalizeToGrowthRate()",
+  "impactedNodes": [
+    {
+      "nodeId": "module:trend-renderer",
+      "depth": 1,
+      "type": "module"
+    },
+    {
+      "nodeId": "design:ui-components",
+      "depth": 1,
+      "type": "design"
+    },
+    {
+      "nodeId": "test:strategy",
+      "depth": 2,
+      "type": "test"
+    },
+    {
+      "nodeId": "module:chart-renderer",
+      "depth": 2,
+      "type": "module"
+    }
+  ],
+  "impactedNodeIds": [
+    "module:trend-renderer",
+    "design:ui-components",
+    "test:strategy",
+    "module:chart-renderer"
+  ],
+  "verifications": {
+    "design:ui-components_impacted": true,
+    "module:trend-renderer_impacted": true,
+    "module:chart-renderer_impacted": true,
+    "test:strategy_impacted": true,
+    "design:data-schema_NOT_impacted": true
+  },
+  "note": "design:data-schema is non-impacted because normalizeToGrowthRate() and GrowthData type already exist in comparison-engine.ts and types/financial.ts - no schema changes needed",
+  "totalImpacted": 4
+}

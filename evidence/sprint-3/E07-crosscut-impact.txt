@@ -1,0 +1,13 @@
+=== IMPACT ANALYSIS: design:data-schema (Sprint 3) ===
+Scenario: Data schema change from flat JSON to nested JSON
+Start node: design:data-schema
+Impacted nodes (4):
+  depth=1: module:data-loader
+  depth=1: module:chart-renderer
+  depth=1: module:comparison-engine
+  depth=2: test:strategy
+
+=== INTERPRETATION ===
+All 3 module nodes + test:strategy impacted:
+  depth 1 = directly derived from data schema
+  depth 2 = transitively affected (test depending on modules)

@@ -1,0 +1,17 @@
+{
+  "findingId": "FIND-001",
+  "dimension": "spec_fidelity",
+  "category": "spec_gap",
+  "severity": "medium",
+  "description": "The behavioral specification omits sector/industry classification as a data dimension for company comparison. The design:data-schema node and design:ui-components node must be updated to include sector metadata from Yahoo Finance summaryProfile. Without this, ComparisonChart cannot group or filter by industry sector, limiting the analytical utility of the visualization.",
+  "evidence": {
+    "filePath": ".vcsdd/features/financial-viz/specs/behavioral-spec.md",
+    "lineRange": "1-44",
+    "snippet": "Requirements REQ-001..004 do not mention sector/industry classification as a data field",
+    "testName": "N/A - spec gap, not a test failure"
+  },
+  "routeToPhase": "1a",
+  "resolution": {
+    "status": "open"
+  }
+}

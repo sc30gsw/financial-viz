@@ -1,0 +1,11 @@
+/vcsdd-spec-review: Iteration 1 - FAIL
+
+Findings:
+F1. SPEC_FIDELITY: behavioral-spec says "stroke-width increases" but module-spec has activeDot.strokeWidth=0
+    - Inconsistency: line stroke-width vs dot strokeWidth are different properties
+F2. SPEC_FIDELITY: REQ-MT-005b mentions "a note" for excluded companies but mechanism unspecified
+F3. VERIFICATION_READINESS: PROP-009 too vague - doesn't specify what is verified
+F4. VERIFICATION_READINESS: No PROP for YoY exclusion logic (REQ-MT-005b)
+F5. VERIFICATION_READINESS: No PROP for mode toggle UI interaction
+
+Resolution: Fix specs before re-review

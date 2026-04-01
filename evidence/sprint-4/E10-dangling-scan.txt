@@ -1,0 +1,13 @@
+=== DANGLING REFERENCE TEST (Sprint 4) ===
+design:realtime-adapter.depends_on: design:nonexistent (does not exist)
+
+=== SCAN RESULT ===
+Nodes: 15
+Edges: 37
+
+Placeholder nodes (dangling references):
+  design:nonexistent (placeholder=true, no spec file)
+
+=== VALIDATION RESULT ===
+ok: false
+reason: Reference integrity errors: Edge 9: target node "design:nonexistent" is a placeholder (no matching document found)

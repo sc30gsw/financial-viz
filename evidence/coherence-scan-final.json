@@ -1,0 +1,49 @@
+{
+  "capturedAt": "2026-04-01T13:42:05.710Z",
+  "sprint": 5,
+  "phase": "complete",
+  "event": "coherence-scan-final",
+  "description": "Final CEG scan after all Sprint 5 implementations including mid-spec requirement changes",
+  "summary": {
+    "nodeCount": 16,
+    "edgeCount": 45,
+    "green": 0,
+    "amber": 45,
+    "gray": 0,
+    "hasCycles": false,
+    "cycles": []
+  },
+  "cycleDetection": {
+    "cycles": []
+  },
+  "deltaFromInitialScan": {
+    "nodeCountDelta": 0,
+    "edgeCountDelta": 0,
+    "initialNodes": 16,
+    "finalNodes": 16,
+    "initialEdges": 45,
+    "finalEdges": 45
+  },
+  "coDDVerificationSummary": {
+    "scan1_initial": {
+      "nodes": 16,
+      "edges": 45,
+      "newNodes": [
+        "req:api-fetching",
+        "design:fetch-layer"
+      ]
+    },
+    "scan2_impact": {
+      "impactedFromDataSchema": 6,
+      "impactedFromApiReq": 3
+    },
+    "scan3_validate": {
+      "verdict": "COHERENCE VALID"
+    },
+    "scan4_final": {
+      "nodes": 16,
+      "edges": 45
+    },
+    "conclusion": "CoDD engine correctly propagated requirement changes through the CEG. No cycles detected. BFS traversal reached all expected downstream nodes."
+  }
+}

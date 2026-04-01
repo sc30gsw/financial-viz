@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-04-02T07:20:00.000Z",
+  "sprint": 6,
+  "phase": "1a_marker_change",
+  "changedNode": "req:multi-trend",
+  "changeDescription": "Spec change #1: Added REQ-MT-004a (dot marker r=4, stroke-width=2, activeDot r=6, 300ms ease-in-out) and REQ-MT-004b (active line stroke-width increase)",
+  "impactedNodes": [
+    {
+      "nodeId": "module:trend-renderer",
+      "depth": 1,
+      "type": "module"
+    },
+    {
+      "nodeId": "design:ui-components",
+      "depth": 1,
+      "type": "design"
+    },
+    {
+      "nodeId": "test:strategy",
+      "depth": 2,
+      "type": "test"
+    },
+    {
+      "nodeId": "module:chart-renderer",
+      "depth": 2,
+      "type": "module"
+    }
+  ],
+  "impactedNodeIds": [
+    "module:trend-renderer",
+    "design:ui-components",
+    "test:strategy",
+    "module:chart-renderer"
+  ],
+  "nonImpactedNodes": {
+    "design:data-schema": true,
+    "req:company-comparison": true,
+    "req:graph-viz": true
+  },
+  "staleNodes": [
+    "design:ui-components",
+    "test:strategy"
+  ],
+  "note": "behavioral-spec.md, verification-architecture.md, design-ui-components.md, test-strategy.md not yet updated - stale by design for CoDD verification",
+  "totalImpacted": 4
+}

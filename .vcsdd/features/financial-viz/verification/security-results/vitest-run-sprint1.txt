@@ -1,0 +1,6 @@
+npm test output:
+
+Test Files  3 passed (3)
+Tests  21 passed (21)
+Start at  2026-04-01
+Duration  1.23s

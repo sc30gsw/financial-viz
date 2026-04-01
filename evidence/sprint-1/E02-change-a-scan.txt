@@ -1,0 +1,31 @@
+=== COHERENCE SCAN (After Change A: +3 nodes) ===
+Nodes: 11
+Edges: 30
+Green: 0 | Amber: 30 | Gray: 0
+Has cycles: false
+
+=== COHERENCE VALIDATE ②
+ok: true
+reason: none
+
+=== DECLARED NODES ===
+ - design:data-schema ( design )
+ - req:revenue-display ( requirement )
+ - req:company-comparison ( requirement )
+ - req:company-strategy ( requirement )
+ - module:data-loader ( module )
+ - module:chart-renderer ( module )
+ - module:comparison-engine ( module )
+ - design:system-arch ( design )
+ - req:graph-viz ( requirement )
+ - design:ui-components ( design )
+ - test:strategy ( test )
+
+=== IMPACT ANALYSIS: req:company-strategy changed ===
+Impacted nodes: 6
+ depth 1 : design:data-schema (path: req:company-strategy -> design:data-schema )
+ depth 1 : design:ui-components (path: req:company-strategy -> design:ui-components )
+ depth 2 : module:data-loader (path: req:company-strategy -> design:data-schema -> module:data-loader )
+ depth 2 : module:chart-renderer (path: req:company-strategy -> design:data-schema -> module:chart-renderer )
+ depth 2 : module:comparison-engine (path: req:company-strategy -> design:data-schema -> module:comparison-engine )
+ depth 3 : test:strategy (path: req:company-strategy -> design:data-schema -> module:data-loader -> test:strategy )

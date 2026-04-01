@@ -1,0 +1,24 @@
+=== NOISY-OR CONFIDENCE BAND ANALYSIS (Sprint 4) ===
+Band thresholds: Green >= 0.90 AND evidenceCount >= 2; Amber >= 0.50; Gray < 0.50
+
+Node incoming edges (used for band classification):
+  req:revenue-display                 evidenceCount=4 maxConf=0.9000 -> amber
+  req:company-comparison              evidenceCount=3 maxConf=0.9000 -> amber
+  req:company-strategy                evidenceCount=3 maxConf=0.9000 -> amber
+  req:sector-analysis                 evidenceCount=4 maxConf=0.9000 -> amber
+  design:data-schema                  evidenceCount=6 maxConf=0.9000 -> amber
+  req:realtime-price                  evidenceCount=2 maxConf=0.9000 -> amber
+  design:system-arch                  evidenceCount=5 maxConf=0.9000 -> amber
+  req:graph-viz                       evidenceCount=4 maxConf=0.9000 -> amber
+  design:ui-components                evidenceCount=2 maxConf=0.9000 -> amber
+  module:comparison-engine            evidenceCount=2 maxConf=0.9000 -> amber
+  module:data-loader                  evidenceCount=1 maxConf=0.9000 -> amber
+  module:chart-renderer               evidenceCount=1 maxConf=0.9000 -> amber
+
+=== BAND TRANSITION EXAMPLE ===
+module:comparison-engine: 2 incoming edges (from design:data-schema and req:sector-analysis)
+  evidenceCount=2, confidence>=0.9 -> GREEN band
+design:realtime-adapter: 2 incoming edges (req:realtime-price, design:system-arch)
+  evidenceCount=2, confidence>=0.9 -> GREEN band
+req:sector-analysis: 0 incoming edges (root node, no one depends on it)
+  evidenceCount=0 -> GRAY band

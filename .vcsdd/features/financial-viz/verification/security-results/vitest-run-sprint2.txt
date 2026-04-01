@@ -1,0 +1,9 @@
+
+ RUN  v4.1.2 /Users/kakikaito/dev/ai/financial-viz
+
+
+ Test Files  4 passed (4)
+      Tests  27 passed (27)
+   Start at  21:10:19
+   Duration  1.21s (transform 196ms, setup 388ms, import 382ms, tests 29ms, environment 2.81s)
+

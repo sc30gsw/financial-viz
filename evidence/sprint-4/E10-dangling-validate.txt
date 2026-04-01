@@ -1,0 +1,6 @@
+=== DANGLING REFERENCE VALIDATION (Sprint 4) ===
+ok: false
+reason: Reference integrity errors: Edge 9: target node "design:nonexistent" is a placeholder (no matching document found)
+
+Placeholder nodes found in coherence.json:
+  design:nonexistent

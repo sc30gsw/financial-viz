@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-04-01T12:00:06.557Z",
+  "event": "coherence_impact",
+  "featureName": "financial-viz",
+  "routedToPhase": "1a",
+  "impactedNodes": [
+    {
+      "nodeId": "module:data-loader",
+      "depth": 1,
+      "confidence": 0.9,
+      "evidenceCount": 1
+    },
+    {
+      "nodeId": "module:chart-renderer",
+      "depth": 1,
+      "confidence": 0.9,
+      "evidenceCount": 1
+    },
+    {
+      "nodeId": "module:comparison-engine",
+      "depth": 1,
+      "confidence": 0.9,
+      "evidenceCount": 2
+    },
+    {
+      "nodeId": "test:strategy",
+      "depth": 2,
+      "confidence": 0,
+      "evidenceCount": 0
+    }
+  ]
+}

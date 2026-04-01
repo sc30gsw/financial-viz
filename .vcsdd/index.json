@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "features": {
+    "financial-viz": {
+      "status": "active",
+      "createdAt": "2026-04-01T11:39:12.984Z",
+      "mode": "lean",
+      "language": "typescript",
+      "currentPhase": "complete",
+      "updatedAt": "2026-04-01T12:21:50.938Z"
+    }
+  },
+  "activeFeature": "financial-viz"
+}

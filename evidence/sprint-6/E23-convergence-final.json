@@ -1,0 +1,92 @@
+{
+  "sprint": 6,
+  "timestamp": "2026-04-01T07:44:00.000Z",
+  "phase": "convergence",
+  "result": "COMPLETE",
+
+  "ceg": {
+    "nodes": 18,
+    "edges": 52,
+    "new_nodes": ["req:multi-trend", "module:trend-renderer"],
+    "new_edges": 7,
+    "baseline_sprint5": { "nodes": 16, "edges": 45 }
+  },
+
+  "tests": {
+    "total": 71,
+    "new_in_sprint6": 30,
+    "files": 8,
+    "all_passing": true
+  },
+
+  "codd_verifications": {
+    "scan_1": "E16 — 18 nodes, 52 edges, ok=true",
+    "impact_marker_change": "E17 — impacted: design:ui-components, module:trend-renderer, module:chart-renderer, test:strategy",
+    "spec_stage_validate": "E18 — ok=true after marker followup",
+    "impact_yoy_change": "E19 — design:data-schema NOT impacted (confirmed)",
+    "coherence_post_yoy": "E20 — ok=true, 18/52"
+  },
+
+  "adversary_review": {
+    "run_1": "FAIL — F1-F6 (intentional: YoY unimplemented)",
+    "run_2": "FAIL — tooltip/Y-axis not using mode (real bug caught)",
+    "run_3": "FAIL — activeDot/opacity tests missing",
+    "run_4": "PASS — all 16 req/PROPs covered"
+  },
+
+  "gate_evidence": {
+    "red": ".vcsdd/features/financial-viz/evidence/sprint-6-red-phase.log",
+    "green": ".vcsdd/features/financial-viz/evidence/sprint-6-green-phase.log"
+  },
+
+  "supplementary_evidence": {
+    "E15": "evidence/sprint-6/E15-status-baseline.txt",
+    "E16": "evidence/sprint-6/E16-coherence-scan-initial.json",
+    "E17": "evidence/sprint-6/E17-impact-marker-change.json",
+    "E18": "evidence/sprint-6/E18-spec-stage-validate.json",
+    "E19": "evidence/sprint-6/E19-impact-yoy-change.json",
+    "E20": "evidence/sprint-6/E20-coherence-post-yoy.json",
+    "E21": "evidence/sprint-6/E21-adversary-fail.txt",
+    "E22": "evidence/sprint-6/E22-feedback-routing.txt",
+    "E22b": "evidence/sprint-6/E22-coherence-post-fix.json",
+    "E23": "evidence/sprint-6/E23-convergence-final.json"
+  },
+
+  "new_files": [
+    "src/utils/trend-data.ts",
+    "src/components/TrendChart.tsx",
+    "src/__tests__/trend-chart.test.tsx"
+  ],
+
+  "modified_files": [
+    "src/App.tsx",
+    ".vcsdd/features/financial-viz/specs/req-multi-trend.md",
+    ".vcsdd/features/financial-viz/specs/module-trend-renderer.md",
+    ".vcsdd/features/financial-viz/specs/behavioral-spec.md",
+    ".vcsdd/features/financial-viz/specs/verification-architecture.md",
+    ".vcsdd/features/financial-viz/specs/design-ui-components.md",
+    ".vcsdd/features/financial-viz/specs/test-strategy.md",
+    ".vcsdd/features/financial-viz/coherence.json",
+    ".vcsdd/features/financial-viz/state.json"
+  ],
+
+  "verified_behaviors": [
+    "REQ-MT-001: 2+ companies → 1 Line per company",
+    "REQ-MT-002: USD/JPY currency normalization",
+    "REQ-MT-003: Missing year → gap (undefined, not 0)",
+    "REQ-MT-004: Dot markers r=4, strokeWidth=2",
+    "REQ-MT-004a: activeDot r=6, strokeWidth=0",
+    "REQ-MT-004b: Inactive line opacity=0.3 on hover",
+    "REQ-MT-005: Mode toggle buttons 絶対値/前年比%",
+    "REQ-MT-005a: YoY growth rate via normalizeToGrowthRate(), percentage display",
+    "REQ-MT-005b: <2yr companies excluded, note shown below chart",
+    "PROP-004 to PROP-010: all verified"
+  ],
+
+  "sprint6_objective_verified": {
+    "codd_2_change_propagation": true,
+    "adversary_fail_pass_validation": true,
+    "vcsdd_gate_compliance": true,
+    "fail_feedback_fix_cycle": "E21 → E22 → E22b → adversary PASS"
+  }
+}

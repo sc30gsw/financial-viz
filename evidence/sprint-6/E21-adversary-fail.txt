@@ -1,0 +1,32 @@
+phase: 3 (adversary review)
+timestamp: 2026-04-01T07:36:00.000Z
+result: FAIL
+total_findings: 6
+
+findings:
+  F1:
+    ref: REQ-MT-005, REQ-MT-005a, PROP-008, PROP-009, PROP-010
+    missing: implementation + tests
+    summary: YoY growth rate mode not implemented; mode toggle absent; 5 PROPs untested
+  F2:
+    ref: PROP-008, module-trend-renderer spec
+    missing: implementation
+    summary: buildTrendChartData(mode='yoyGrowth') falls through to buildAbsoluteData
+  F3:
+    ref: REQ-MT-005b, PROP-009
+    missing: implementation + tests
+    summary: excludedCompanies always []; companies with <2yr not excluded in yoyGrowth
+  F4:
+    ref: REQ-MT-005, PROP-010
+    missing: implementation + tests
+    summary: TrendChart has no mode toggle buttons; no useState for mode
+  F5:
+    ref: REQ-MT-005b, PROP-010
+    missing: tests (UI code exists but unreachable due to F3+F4)
+    summary: excluded note UI exists but never populated; no test for note appearing
+  F6:
+    ref: PROP-008
+    missing: tests
+    summary: no test verifying growth rate values match normalizeToGrowthRate() output
+
+earliest_phase_routing: 2a (missing tests should be added first, then 2b for implementation)

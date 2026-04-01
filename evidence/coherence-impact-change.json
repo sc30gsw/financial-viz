@@ -1,0 +1,122 @@
+{
+  "capturedAt": "2026-04-01T13:39:11.986Z",
+  "sprint": 5,
+  "phase": "2b-mid-change",
+  "event": "coherence-impact-post-requirement-change",
+  "description": "Impact analysis after adding REQ-AF-005 (cache TTL) and REQ-AF-006 (error recovery) to req:api-fetching, and adding fetchedAt/isStale fields to design:data-schema",
+  "cegSummary": {
+    "nodeCount": 16,
+    "edgeCount": 45,
+    "green": 0,
+    "amber": 45,
+    "gray": 0,
+    "hasCycles": false,
+    "cycles": []
+  },
+  "impactFrom_req_api_fetching": {
+    "reachedNodes": {
+      "design:fetch-layer": {
+        "depth": 1,
+        "path": [
+          "req:api-fetching",
+          "design:fetch-layer"
+        ],
+        "source": "req:api-fetching"
+      },
+      "module:data-loader": {
+        "depth": 1,
+        "path": [
+          "req:api-fetching",
+          "module:data-loader"
+        ],
+        "source": "req:api-fetching"
+      },
+      "test:strategy": {
+        "depth": 2,
+        "path": [
+          "req:api-fetching",
+          "module:data-loader",
+          "test:strategy"
+        ],
+        "source": "req:api-fetching"
+      }
+    },
+    "count": 3,
+    "nodeIds": [
+      "design:fetch-layer",
+      "module:data-loader",
+      "test:strategy"
+    ]
+  },
+  "impactFrom_design_data_schema": {
+    "reachedNodes": {
+      "module:data-loader": {
+        "depth": 1,
+        "path": [
+          "design:data-schema",
+          "module:data-loader"
+        ],
+        "source": "design:data-schema"
+      },
+      "module:chart-renderer": {
+        "depth": 1,
+        "path": [
+          "design:data-schema",
+          "module:chart-renderer"
+        ],
+        "source": "design:data-schema"
+      },
+      "module:comparison-engine": {
+        "depth": 1,
+        "path": [
+          "design:data-schema",
+          "module:comparison-engine"
+        ],
+        "source": "design:data-schema"
+      },
+      "design:fetch-layer": {
+        "depth": 1,
+        "path": [
+          "design:data-schema",
+          "design:fetch-layer"
+        ],
+        "source": "design:data-schema"
+      },
+      "req:api-fetching": {
+        "depth": 1,
+        "path": [
+          "design:data-schema",
+          "req:api-fetching"
+        ],
+        "source": "design:data-schema"
+      },
+      "test:strategy": {
+        "depth": 2,
+        "path": [
+          "design:data-schema",
+          "module:data-loader",
+          "test:strategy"
+        ],
+        "source": "design:data-schema"
+      }
+    },
+    "count": 6,
+    "nodeIds": [
+      "module:data-loader",
+      "module:chart-renderer",
+      "module:comparison-engine",
+      "design:fetch-layer",
+      "req:api-fetching",
+      "test:strategy"
+    ]
+  },
+  "verification": {
+    "hasCycles": false,
+    "expectedDownstreamFromDataSchema": [
+      "module:data-loader",
+      "module:chart-renderer",
+      "module:comparison-engine",
+      "design:fetch-layer"
+    ]
+  }
+}

@@ -1,0 +1,704 @@
+{
+  "version": 1,
+  "nodes": {
+    "design:data-schema": {
+      "id": "design:data-schema",
+      "type": "design",
+      "placeholder": false,
+      "path": "specs/design-data-schema.md",
+      "name": "Data Schema Design"
+    },
+    "req:revenue-display": {
+      "id": "req:revenue-display",
+      "type": "requirement",
+      "placeholder": false,
+      "path": "specs/req-revenue-display.md",
+      "name": "Revenue Display Requirements"
+    },
+    "req:company-comparison": {
+      "id": "req:company-comparison",
+      "type": "requirement",
+      "placeholder": false,
+      "path": "specs/req-company-comparison.md",
+      "name": "Company Comparison Requirements"
+    },
+    "req:company-strategy": {
+      "id": "req:company-strategy",
+      "type": "requirement",
+      "placeholder": false,
+      "path": "specs/req-company-strategy.md",
+      "name": "Company Strategy Display Requirements"
+    },
+    "req:sector-analysis": {
+      "id": "req:sector-analysis",
+      "type": "requirement",
+      "placeholder": false,
+      "path": "specs/req-sector-analysis.md",
+      "name": "Sector Analysis Requirement"
+    },
+    "module:data-loader": {
+      "id": "module:data-loader",
+      "type": "module",
+      "placeholder": false,
+      "path": "specs/module-data-loader.md",
+      "name": "Data Loader Module"
+    },
+    "module:chart-renderer": {
+      "id": "module:chart-renderer",
+      "type": "module",
+      "placeholder": false,
+      "path": "specs/module-chart-renderer.md",
+      "name": "Chart Renderer Module"
+    },
+    "module:comparison-engine": {
+      "id": "module:comparison-engine",
+      "type": "module",
+      "placeholder": false,
+      "path": "specs/module-comparison-engine.md",
+      "name": "Comparison Engine Module"
+    },
+    "design:system-arch": {
+      "id": "design:system-arch",
+      "type": "design",
+      "placeholder": false,
+      "path": "specs/design-system-arch.md",
+      "name": "System Architecture"
+    },
+    "req:graph-viz": {
+      "id": "req:graph-viz",
+      "type": "requirement",
+      "placeholder": false,
+      "path": "specs/req-graph-viz.md",
+      "name": "Graph Visualization Requirements"
+    },
+    "design:ui-components": {
+      "id": "design:ui-components",
+      "type": "design",
+      "placeholder": false,
+      "path": "specs/design-ui-components.md",
+      "name": "UI Components Design"
+    },
+    "test:strategy": {
+      "id": "test:strategy",
+      "type": "test",
+      "placeholder": false,
+      "path": "specs/test-strategy.md",
+      "name": "Test Strategy"
+    }
+  },
+  "edges": [
+    {
+      "id": 1,
+      "sourceId": "design:data-schema",
+      "targetId": "req:revenue-display",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-data-schema.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "sourceId": "design:data-schema",
+      "targetId": "req:company-comparison",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-data-schema.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "sourceId": "design:data-schema",
+      "targetId": "req:company-strategy",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-data-schema.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "sourceId": "design:data-schema",
+      "targetId": "req:sector-analysis",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-data-schema.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "sourceId": "module:data-loader",
+      "targetId": "design:data-schema",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-data-schema.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "sourceId": "module:chart-renderer",
+      "targetId": "design:data-schema",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-data-schema.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "sourceId": "module:comparison-engine",
+      "targetId": "design:data-schema",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-data-schema.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "sourceId": "design:system-arch",
+      "targetId": "req:revenue-display",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-system-arch.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "sourceId": "design:system-arch",
+      "targetId": "req:graph-viz",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-system-arch.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "sourceId": "module:data-loader",
+      "targetId": "design:system-arch",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-system-arch.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "sourceId": "design:ui-components",
+      "targetId": "design:system-arch",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-system-arch.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "sourceId": "design:ui-components",
+      "targetId": "req:graph-viz",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-ui-components.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "sourceId": "design:ui-components",
+      "targetId": "design:system-arch",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-ui-components.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "sourceId": "module:chart-renderer",
+      "targetId": "design:ui-components",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-ui-components.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "sourceId": "module:chart-renderer",
+      "targetId": "design:data-schema",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-chart-renderer.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "sourceId": "module:chart-renderer",
+      "targetId": "design:ui-components",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-chart-renderer.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "sourceId": "module:comparison-engine",
+      "targetId": "design:data-schema",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-comparison-engine.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "sourceId": "module:comparison-engine",
+      "targetId": "req:company-comparison",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-comparison-engine.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "sourceId": "test:strategy",
+      "targetId": "module:comparison-engine",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-comparison-engine.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "sourceId": "module:data-loader",
+      "targetId": "design:data-schema",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-data-loader.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "sourceId": "module:data-loader",
+      "targetId": "design:system-arch",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-data-loader.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "sourceId": "design:data-schema",
+      "targetId": "req:company-comparison",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-company-comparison.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "sourceId": "design:data-schema",
+      "targetId": "req:company-strategy",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-company-strategy.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "sourceId": "design:ui-components",
+      "targetId": "req:company-strategy",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-company-strategy.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "sourceId": "design:system-arch",
+      "targetId": "req:graph-viz",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-graph-viz.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "sourceId": "design:ui-components",
+      "targetId": "req:graph-viz",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-graph-viz.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "sourceId": "design:data-schema",
+      "targetId": "req:revenue-display",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-revenue-display.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "sourceId": "design:system-arch",
+      "targetId": "req:revenue-display",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-revenue-display.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "sourceId": "design:data-schema",
+      "targetId": "req:sector-analysis",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-sector-analysis.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "sourceId": "module:comparison-engine",
+      "targetId": "req:sector-analysis",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-sector-analysis.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "sourceId": "design:ui-components",
+      "targetId": "req:sector-analysis",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-sector-analysis.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "sourceId": "test:strategy",
+      "targetId": "module:data-loader",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/test-strategy.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "sourceId": "test:strategy",
+      "targetId": "module:chart-renderer",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/test-strategy.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "sourceId": "test:strategy",
+      "targetId": "module:comparison-engine",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/test-strategy.md depends_on",
+          "isNegative": false
+        }
+      ]
+    }
+  ],
+  "lastScanAt": "2026-04-01T12:06:39.781Z"
+}

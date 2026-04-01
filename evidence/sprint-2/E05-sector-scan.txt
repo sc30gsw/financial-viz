@@ -1,0 +1,37 @@
+=== COHERENCE SCAN: Sprint 2 Phase 1a (After req:sector-analysis) ===
+Timestamp: 2026-04-01T12:06:16.913Z
+
+Node count: 12 (Sprint 1: 11, added req:sector-analysis)
+Edge count: 34
+
+Nodes:
+  design:data-schema [design]
+  req:revenue-display [requirement]
+  req:company-comparison [requirement]
+  req:company-strategy [requirement]
+  req:sector-analysis [requirement]
+  module:data-loader [module]
+  module:chart-renderer [module]
+  module:comparison-engine [module]
+  design:system-arch [design]
+  req:graph-viz [requirement]
+  design:ui-components [design]
+  test:strategy [test]
+
+Validation: ok=true
+
+=== IMPACT ANALYSIS: req:sector-analysis ===
+Start node: req:sector-analysis
+Impacted (6 nodes):
+  depth=1: design:data-schema
+  depth=1: module:comparison-engine
+  depth=1: design:ui-components
+  depth=2: module:data-loader
+  depth=2: module:chart-renderer
+  depth=2: test:strategy
+
+=== INTERPRETATION ===
+BFS propagation confirms:
+  depth 1: design:data-schema, module:comparison-engine, design:ui-components
+  depth 2: module:data-loader, module:chart-renderer, test:strategy
+Total: 6 impacted nodes across 2 depth levels

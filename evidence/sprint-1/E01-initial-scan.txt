@@ -1,0 +1,29 @@
+=== COHERENCE SCAN (Initial - 8 declared nodes) ===
+Nodes: 8
+Edges: 20
+Green: 0 | Amber: 20 | Gray: 0
+Has cycles: false
+
+=== COHERENCE VALIDATE ①
+ok: true
+reason: none
+
+=== DECLARED NODES ===
+ - design:data-schema ( design )
+ - req:revenue-display ( requirement )
+ - req:company-comparison ( requirement )
+ - module:data-loader ( module )
+ - module:chart-renderer ( module )
+ - design:system-arch ( design )
+ - req:graph-viz ( requirement )
+ - design:ui-components ( design )
+
+=== EDGES (sample) ===
+  design:data-schema --[derives_from]-> req:revenue-display conf: 0.9
+  design:data-schema --[derives_from]-> req:company-comparison conf: 0.9
+  module:data-loader --[depends_on]-> design:data-schema conf: 0.9
+  module:chart-renderer --[depends_on]-> design:data-schema conf: 0.9
+  design:system-arch --[derives_from]-> req:revenue-display conf: 0.9
+  design:system-arch --[derives_from]-> req:graph-viz conf: 0.9
+  module:data-loader --[depends_on]-> design:system-arch conf: 0.9
+  design:ui-components --[depends_on]-> design:system-arch conf: 0.9
