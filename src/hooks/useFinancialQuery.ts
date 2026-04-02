@@ -12,7 +12,7 @@ export function useFinancialQuery(tickers: string[]): UseFinancialQueryResult {
   const results = useQueries({
     queries: tickers.map(ticker => ({
       queryKey: ['financials', ticker],
-      queryFn: (): Promise<CompanyFinancials> => upfetch(`/financials/${ticker}`),
+      queryFn: (): Promise<CompanyFinancials> => upfetch<CompanyFinancials>(`/financials/${ticker}`),
       staleTime: 5 * 60 * 1000,
       placeholderData: keepPreviousData,
     })),

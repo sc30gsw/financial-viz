@@ -1,0 +1,16 @@
+{
+  "findingId": "FIND-001",
+  "dimension": "spec_fidelity",
+  "category": "requirement_mismatch",
+  "severity": "high",
+  "description": "Behavioral Scenario 1 says quotes are fetched only after the user enters quantity and cost basis, but req-portfolio-pnl-breakdown.md states quote fetch begins when a ticker is selected. Those two triggers produce different loading behavior for selected tickers with no holdings yet, so the quote-fetch contract is not implementable unambiguously.",
+  "evidence": {
+    "filePath": ".vcsdd/features/portfolio-pnl-breakdown/specs/behavioral-spec.md",
+    "lineRange": "15-18",
+    "snippet": "When: User enters holding quantity and average cost basis per ticker / Then: The app fetches the latest quote for each selected ticker"
+  },
+  "routeToPhase": "1a",
+  "resolution": {
+    "status": "open"
+  }
+}

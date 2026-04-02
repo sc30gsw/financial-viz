@@ -4,8 +4,11 @@ import ComparisonChart from './components/ComparisonChart'
 import TrendChart from './components/TrendChart'
 import StrategyPanel from './components/StrategyPanel'
 import RevenueChart from './components/RevenueChart'
+import PortfolioBreakdownPanel from './components/PortfolioBreakdownPanel'
 import { useFinancialQuery } from './hooks/useFinancialQuery'
 import { useExchangeRate } from './hooks/useExchangeRate'
+import { usePortfolioQuoteQuery } from './hooks/usePortfolioQuoteQuery'
+import type { PortfolioHoldingInput } from './utils/portfolio-pnl'
 import './index.css'
 
 type Metric = 'revenue' | 'operatingIncome' | 'netIncome'
@@ -13,9 +16,26 @@ type Metric = 'revenue' | 'operatingIncome' | 'netIncome'
 function App() {
   const [selectedTickers, setSelectedTickers] = useState<string[]>([])
   const [metric, setMetric] = useState<Metric>('revenue')
+  const [holdings, setHoldings] = useState<Record<string, PortfolioHoldingInput>>({})
 
   const { data, isLoading, error } = useFinancialQuery(selectedTickers)
+  const quoteQuery = usePortfolioQuoteQuery(selectedTickers)
   const usdJpy = useExchangeRate()
+
+  const handleHoldingChange = (
+    ticker: string,
+    field: keyof PortfolioHoldingInput,
+    value: number | null,
+  ) => {
+    setHoldings(current => ({
+      ...current,
+      [ticker]: {
+        shares: current[ticker]?.shares ?? null,
+        costBasis: current[ticker]?.costBasis ?? null,
+        [field]: value,
+      },
+    }))
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -30,6 +50,18 @@ function App() {
 
       <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">
         <CompanySelector selected={selectedTickers} onChange={setSelectedTickers} />
+
+        {selectedTickers.length > 0 && (
+          <PortfolioBreakdownPanel
+            selectedTickers={selectedTickers}
+            holdings={holdings}
+            quotes={quoteQuery.data}
+            usdJpy={usdJpy}
+            isLoading={quoteQuery.isLoading}
+            error={quoteQuery.error}
+            onHoldingChange={handleHoldingChange}
+          />
+        )}
 
         {isLoading && (
           <div className="flex items-center justify-center h-32 text-gray-400">

@@ -1,0 +1,121 @@
+{
+  "featureName": "portfolio-pnl-breakdown",
+  "mode": "lean",
+  "language": "typescript",
+  "currentPhase": "complete",
+  "phaseHistory": [
+    {
+      "from": "init",
+      "to": "1a",
+      "timestamp": "2026-04-02T02:30:28.948Z",
+      "reason": "Sprint 1: behavioral spec for portfolio-pnl-breakdown"
+    },
+    {
+      "from": "1a",
+      "to": "1b",
+      "timestamp": "2026-04-02T02:30:28.952Z",
+      "reason": "Sprint 1: verification architecture for portfolio-pnl-breakdown"
+    },
+    {
+      "from": "1b",
+      "to": "1c",
+      "timestamp": "2026-04-02T02:31:05.709Z",
+      "reason": "Sprint 1: spec review for portfolio-pnl-breakdown"
+    },
+    {
+      "from": "1c",
+      "to": "2a",
+      "timestamp": "2026-04-02T02:55:26.992Z",
+      "reason": "Sprint 1: red phase for portfolio-pnl-breakdown",
+      "sprint": 1
+    },
+    {
+      "from": "2a",
+      "to": "2b",
+      "timestamp": "2026-04-02T03:26:24.549Z",
+      "reason": "Sprint 1: portfolio-pnl-breakdown implemented and target tests are green",
+      "sprint": 1
+    },
+    {
+      "from": "2b",
+      "to": "2c",
+      "timestamp": "2026-04-02T03:39:00.310Z",
+      "reason": "Sprint 1: portfolio-pnl-breakdown refactor complete with tests still green",
+      "sprint": 1
+    },
+    {
+      "from": "2c",
+      "to": "3",
+      "timestamp": "2026-04-02T03:39:38.545Z",
+      "reason": "Sprint 1: adversary review for portfolio-pnl-breakdown implementation",
+      "sprint": 1
+    },
+    {
+      "from": "3",
+      "to": "5",
+      "timestamp": "2026-04-02T03:43:48.649Z",
+      "reason": "Sprint 1: adversary PASS, proceeding to hardening",
+      "sprint": 1
+    },
+    {
+      "from": "5",
+      "to": "6",
+      "timestamp": "2026-04-02T03:49:18.248Z",
+      "reason": "Sprint 1: hardening artifacts recorded",
+      "sprint": 1
+    },
+    {
+      "from": "6",
+      "to": "complete",
+      "timestamp": "2026-04-02T04:03:52.788Z",
+      "reason": "Sprint 1 complete: portfolio-pnl-breakdown implemented and verified",
+      "sprint": 1
+    }
+  ],
+  "iterations": {
+    "3": 1,
+    "5": 1,
+    "6": 1,
+    "1a": 1,
+    "1b": 1,
+    "1c": 1,
+    "2a": 1,
+    "2b": 1,
+    "2c": 1,
+    "complete": 1
+  },
+  "proofObligations": [],
+  "traceability": {
+    "epicId": "VCSDD-portfolio-pnl-breakdown-1775096918588",
+    "beads": []
+  },
+  "gates": {
+    "3": {
+      "verdict": "PASS",
+      "timestamp": "2026-04-02T03:43:48.647Z",
+      "reviewedBy": "adversary",
+      "details": {
+        "findingCount": 0,
+        "summary": "Implementation adversary PASS: portfolio-pnl-breakdown meets spec, edge-case coverage, and verification readiness."
+      }
+    },
+    "1c": {
+      "verdict": "PASS",
+      "timestamp": "2026-04-02T02:50:28.857Z",
+      "reviewedBy": "adversary",
+      "details": {
+        "dimensions": {
+          "spec_fidelity": "PASS",
+          "edge_case_coverage": "PASS",
+          "verification_readiness": "PASS"
+        },
+        "summary": "Spec review iteration 1 findings resolved: quote-fetch trigger aligned to ticker selection, pending-rate behavior specified, and verification obligations expanded to hook/component error-state coverage."
+      },
+      "adversaryVerdict": "PASS",
+      "adversaryReviewedAt": "2026-04-02T02:50:28.857Z"
+    }
+  },
+  "sprintCount": 1,
+  "createdAt": "2026-04-02T02:28:38.588Z",
+  "updatedAt": "2026-04-02T04:03:52.789Z"
+}

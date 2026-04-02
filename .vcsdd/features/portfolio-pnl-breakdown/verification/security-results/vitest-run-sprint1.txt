@@ -1,0 +1,5 @@
+portfolio-pnl-breakdown verification snapshot
+
+- Target feature tests: 11/11 passing
+- Full regression suite: 82/82 passing
+- Build status: unrelated pre-existing TypeScript errors remain in `src/api/yahoo-finance.ts`, `src/components/ComparisonChart.tsx`, `src/components/RevenueChart.tsx`, and `src/components/TrendChart.tsx`

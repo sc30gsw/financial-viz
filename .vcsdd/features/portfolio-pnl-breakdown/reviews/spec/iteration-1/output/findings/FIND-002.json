@@ -1,0 +1,16 @@
+{
+  "findingId": "FIND-002",
+  "dimension": "spec_fidelity",
+  "category": "spec_gap",
+  "severity": "high",
+  "description": "The requirement-level spec defines mixed-currency aggregation only when the USD/JPY rate is available, but it never specifies the user-visible behavior when USD positions exist and that FX rate is missing. Downstream artifacts already introduce a pending-rate state for that case, so AC-007-3 currently has no stable requirement-level oracle for a core failure path.",
+  "evidence": {
+    "filePath": ".vcsdd/features/portfolio-pnl-breakdown/specs/behavioral-spec.md",
+    "lineRange": "20-23",
+    "snippet": "When: The current USD/JPY rate is available / Then: Aggregate totals are normalized to JPY and an exchange-rate note is shown"
+  },
+  "routeToPhase": "1a",
+  "resolution": {
+    "status": "open"
+  }
+}

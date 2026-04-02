@@ -1,0 +1,82 @@
+{
+  "sprintNumber": 1,
+  "feature": "portfolio-pnl-breakdown",
+  "overallVerdict": "FAIL",
+  "timestamp": "2026-04-02T00:00:00.000Z",
+  "iteration": 1,
+  "dimensions": [
+    {
+      "name": "spec_fidelity",
+      "verdict": "FAIL",
+      "findings": ["FIND-001", "FIND-002"],
+      "evidence": [
+        {
+          "type": "file",
+          "location": ".vcsdd/features/portfolio-pnl-breakdown/specs/behavioral-spec.md",
+          "description": "Scenario 1 ties quote fetch to holdings entry, while REQ-007 ties quote fetch to ticker selection. Mixed-currency behavior is also only specified for the successful usdJpy-available path."
+        },
+        {
+          "type": "file",
+          "location": ".vcsdd/features/portfolio-pnl-breakdown/specs/req-portfolio-pnl-breakdown.md",
+          "description": "REQ-007 requires quote fetch on ticker selection and JPY normalization for mixed-currency holdings, but it does not define the usdJpy-missing behavior assumed by downstream artifacts."
+        }
+      ]
+    },
+    {
+      "name": "edge_case_coverage",
+      "verdict": "PASS",
+      "findings": [],
+      "evidence": [
+        {
+          "type": "file",
+          "location": ".vcsdd/features/portfolio-pnl-breakdown/specs/behavioral-spec.md",
+          "description": "The spec explicitly covers missing-input, mixed-currency, and quote-failure edge cases for the portfolio panel."
+        }
+      ]
+    },
+    {
+      "name": "implementation_correctness",
+      "verdict": "PASS",
+      "findings": [],
+      "evidence": [
+        {
+          "type": "file",
+          "location": ".vcsdd/features/portfolio-pnl-breakdown/specs/module-portfolio-pnl.md",
+          "description": "The declared utility contract separates status states and aggregate calculation responsibilities cleanly, with no contradiction beyond the cited spec-fidelity findings."
+        }
+      ]
+    },
+    {
+      "name": "structural_integrity",
+      "verdict": "PASS",
+      "findings": [],
+      "evidence": [
+        {
+          "type": "file",
+          "location": ".vcsdd/features/portfolio-pnl-breakdown/specs/verification-architecture.md",
+          "description": "The spec keeps a clear purity boundary between the React Query hook, the DOM panel, and the pure portfolio aggregation utility."
+        }
+      ]
+    },
+    {
+      "name": "verification_readiness",
+      "verdict": "FAIL",
+      "findings": ["FIND-003"],
+      "evidence": [
+        {
+          "type": "file",
+          "location": ".vcsdd/features/portfolio-pnl-breakdown/specs/verification-architecture.md",
+          "description": "Proof obligations cover normalization, missing-input exclusion, pending-rate, and ready-state totals only; they omit quote-fetch trigger, native-currency display, and quote-error preservation."
+        },
+        {
+          "type": "file",
+          "location": ".vcsdd/features/portfolio-pnl-breakdown/specs/test-strategy.md",
+          "description": "Planned tests cover normalization, summary display, and quote-query behavior, but do not define assertions for native-price display or the quote-failure UI contract."
+        }
+      ]
+    }
+  ],
+  "reviewContext": {
+    "reviewType": "spec"
+  }
+}

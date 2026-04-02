@@ -8,7 +8,15 @@
       "language": "typescript",
       "currentPhase": "complete",
       "updatedAt": "2026-04-01T12:21:50.938Z"
+    },
+    "portfolio-pnl-breakdown": {
+      "status": "active",
+      "createdAt": "2026-04-02T02:28:38.588Z",
+      "mode": "lean",
+      "language": "typescript",
+      "currentPhase": "complete",
+      "updatedAt": "2026-04-02T04:03:52.789Z"
     }
   },
-  "activeFeature": "financial-viz"
+  "activeFeature": "portfolio-pnl-breakdown"
 }

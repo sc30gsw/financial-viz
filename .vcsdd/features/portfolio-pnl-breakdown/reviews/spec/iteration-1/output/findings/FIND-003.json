@@ -1,0 +1,16 @@
+{
+  "findingId": "FIND-003",
+  "dimension": "verification_readiness",
+  "category": "proof_gap",
+  "severity": "high",
+  "description": "The verification artifacts do not define a proof obligation for fetching quotes on ticker selection, displaying current price in native quote currency, or preserving the row-level editor and error state when a quote fetch fails. verification-architecture.md only covers JPY normalization, missing-input exclusion, pending-rate, and ready-state totals, so those required behaviors can regress without failing the planned verification stack.",
+  "evidence": {
+    "filePath": ".vcsdd/features/portfolio-pnl-breakdown/specs/verification-architecture.md",
+    "lineRange": "11-18",
+    "snippet": "PROP-011..014 cover normalization, missing-input exclusion, pending-rate, and ready-state totals only"
+  },
+  "routeToPhase": "1b",
+  "resolution": {
+    "status": "open"
+  }
+}

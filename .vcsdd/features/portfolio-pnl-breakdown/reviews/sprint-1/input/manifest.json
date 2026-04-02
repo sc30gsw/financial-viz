@@ -1,0 +1,33 @@
+{
+  "reviewType": "implementation",
+  "featureName": "portfolio-pnl-breakdown",
+  "sprintNumber": 1,
+  "artifactsToReview": {
+    "spec": [
+      "specs/behavioral-spec.md",
+      "specs/verification-architecture.md",
+      "specs/req-portfolio-pnl-breakdown.md",
+      "specs/design-portfolio-pnl-breakdown.md",
+      "specs/module-portfolio-pnl.md",
+      "specs/test-strategy.md"
+    ],
+    "tests": [
+      "src/__tests__/portfolio-pnl.test.ts",
+      "src/__tests__/portfolio-breakdown-panel.test.tsx",
+      "src/__tests__/use-portfolio-quote-query.test.tsx"
+    ],
+    "source": [
+      "src/App.tsx",
+      "src/components/PortfolioBreakdownPanel.tsx",
+      "src/hooks/usePortfolioQuoteQuery.ts",
+      "src/utils/portfolio-pnl.ts"
+    ]
+  },
+  "reviewDimensions": [
+    "spec_fidelity",
+    "edge_case_coverage",
+    "implementation_correctness",
+    "structural_integrity",
+    "verification_readiness"
+  ]
+}

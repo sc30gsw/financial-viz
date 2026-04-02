@@ -1,0 +1,17 @@
+{
+  "reviewType": "spec",
+  "featureName": "portfolio-pnl-breakdown",
+  "iteration": 2,
+  "artifactsToReview": [
+    "specs/behavioral-spec.md",
+    "specs/verification-architecture.md",
+    "specs/req-portfolio-pnl-breakdown.md",
+    "specs/design-portfolio-pnl-breakdown.md",
+    "specs/module-portfolio-pnl.md",
+    "specs/test-strategy.md"
+  ],
+  "reviewDimensions": [
+    "spec_fidelity",
+    "verification_readiness"
+  ]
+}

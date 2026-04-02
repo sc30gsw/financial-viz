@@ -1,0 +1,288 @@
+{
+  "version": 1,
+  "nodes": {
+    "design:portfolio-pnl-breakdown": {
+      "id": "design:portfolio-pnl-breakdown",
+      "type": "design",
+      "placeholder": false,
+      "path": "specs/design-portfolio-pnl-breakdown.md",
+      "name": "Portfolio PnL Breakdown Design"
+    },
+    "req:portfolio-pnl-breakdown": {
+      "id": "req:portfolio-pnl-breakdown",
+      "type": "requirement",
+      "placeholder": false,
+      "path": "specs/req-portfolio-pnl-breakdown.md",
+      "name": "Portfolio PnL Breakdown Requirement"
+    },
+    "module:portfolio-pnl": {
+      "id": "module:portfolio-pnl",
+      "type": "module",
+      "placeholder": false,
+      "path": "specs/module-portfolio-pnl.md",
+      "name": "Portfolio PnL Module"
+    },
+    "test:strategy": {
+      "id": "test:strategy",
+      "type": "test",
+      "placeholder": false,
+      "path": "specs/test-strategy.md",
+      "name": "Test Strategy"
+    },
+    "file:src/components/PortfolioBreakdownPanel.tsx": {
+      "id": "file:src/components/PortfolioBreakdownPanel.tsx",
+      "type": "file",
+      "placeholder": false,
+      "path": "src/components/PortfolioBreakdownPanel.tsx"
+    },
+    "file:src/hooks/usePortfolioQuoteQuery.ts": {
+      "id": "file:src/hooks/usePortfolioQuoteQuery.ts",
+      "type": "file",
+      "placeholder": false,
+      "path": "src/hooks/usePortfolioQuoteQuery.ts"
+    },
+    "file:src/utils/portfolio-pnl.ts": {
+      "id": "file:src/utils/portfolio-pnl.ts",
+      "type": "file",
+      "placeholder": false,
+      "path": "src/utils/portfolio-pnl.ts"
+    },
+    "file:src/__tests__/portfolio-breakdown-panel.test.tsx": {
+      "id": "file:src/__tests__/portfolio-breakdown-panel.test.tsx",
+      "type": "file",
+      "placeholder": false,
+      "path": "src/__tests__/portfolio-breakdown-panel.test.tsx"
+    },
+    "file:src/__tests__/portfolio-pnl.test.ts": {
+      "id": "file:src/__tests__/portfolio-pnl.test.ts",
+      "type": "file",
+      "placeholder": false,
+      "path": "src/__tests__/portfolio-pnl.test.ts"
+    },
+    "file:src/__tests__/use-portfolio-quote-query.test.tsx": {
+      "id": "file:src/__tests__/use-portfolio-quote-query.test.tsx",
+      "type": "file",
+      "placeholder": false,
+      "path": "src/__tests__/use-portfolio-quote-query.test.tsx"
+    }
+  },
+  "edges": [
+    {
+      "id": 1,
+      "sourceId": "design:portfolio-pnl-breakdown",
+      "targetId": "req:portfolio-pnl-breakdown",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/design-portfolio-pnl-breakdown.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "sourceId": "module:portfolio-pnl",
+      "targetId": "design:portfolio-pnl-breakdown",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-portfolio-pnl.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "sourceId": "module:portfolio-pnl",
+      "targetId": "req:portfolio-pnl-breakdown",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-portfolio-pnl.md depends_on",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "sourceId": "test:strategy",
+      "targetId": "module:portfolio-pnl",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/module-portfolio-pnl.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "sourceId": "module:portfolio-pnl",
+      "targetId": "file:src/components/PortfolioBreakdownPanel.tsx",
+      "relation": "extracted_from",
+      "semantic": "technical",
+      "confidence": 0.85,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "source_files",
+          "score": 0.85,
+          "detail": "Source file declared in specs/module-portfolio-pnl.md",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "sourceId": "module:portfolio-pnl",
+      "targetId": "file:src/hooks/usePortfolioQuoteQuery.ts",
+      "relation": "extracted_from",
+      "semantic": "technical",
+      "confidence": 0.85,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "source_files",
+          "score": 0.85,
+          "detail": "Source file declared in specs/module-portfolio-pnl.md",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "sourceId": "module:portfolio-pnl",
+      "targetId": "file:src/utils/portfolio-pnl.ts",
+      "relation": "extracted_from",
+      "semantic": "technical",
+      "confidence": 0.85,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "source_files",
+          "score": 0.85,
+          "detail": "Source file declared in specs/module-portfolio-pnl.md",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "sourceId": "module:portfolio-pnl",
+      "targetId": "file:src/__tests__/portfolio-breakdown-panel.test.tsx",
+      "relation": "extracted_from",
+      "semantic": "technical",
+      "confidence": 0.85,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "source_files",
+          "score": 0.85,
+          "detail": "Source file declared in specs/module-portfolio-pnl.md",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "sourceId": "module:portfolio-pnl",
+      "targetId": "file:src/__tests__/portfolio-pnl.test.ts",
+      "relation": "extracted_from",
+      "semantic": "technical",
+      "confidence": 0.85,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "source_files",
+          "score": 0.85,
+          "detail": "Source file declared in specs/module-portfolio-pnl.md",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "sourceId": "module:portfolio-pnl",
+      "targetId": "file:src/__tests__/use-portfolio-quote-query.test.tsx",
+      "relation": "extracted_from",
+      "semantic": "technical",
+      "confidence": 0.85,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "source_files",
+          "score": 0.85,
+          "detail": "Source file declared in specs/module-portfolio-pnl.md",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "sourceId": "design:portfolio-pnl-breakdown",
+      "targetId": "req:portfolio-pnl-breakdown",
+      "relation": "depends_on",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/req-portfolio-pnl-breakdown.md depended_by",
+          "isNegative": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "sourceId": "test:strategy",
+      "targetId": "module:portfolio-pnl",
+      "relation": "derives_from",
+      "semantic": "governance",
+      "confidence": 0.9,
+      "isActive": true,
+      "evidence": [
+        {
+          "sourceType": "frontmatter",
+          "method": "frontmatter",
+          "score": 0.9,
+          "detail": "Declared in specs/test-strategy.md depends_on",
+          "isNegative": false
+        }
+      ]
+    }
+  ],
+  "lastScanAt": "2026-04-02T02:55:26.989Z"
+}
