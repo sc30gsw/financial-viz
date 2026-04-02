@@ -1,19 +1,19 @@
 {
   "version": 1,
   "nodes": {
-    "design:portfolio-pnl-breakdown": {
-      "id": "design:portfolio-pnl-breakdown",
-      "type": "design",
-      "placeholder": false,
-      "path": "specs/design-portfolio-pnl-breakdown.md",
-      "name": "Portfolio PnL Breakdown Design"
-    },
     "req:portfolio-pnl-breakdown": {
       "id": "req:portfolio-pnl-breakdown",
       "type": "requirement",
       "placeholder": false,
       "path": "specs/req-portfolio-pnl-breakdown.md",
       "name": "Portfolio PnL Breakdown Requirement"
+    },
+    "design:portfolio-pnl-breakdown": {
+      "id": "design:portfolio-pnl-breakdown",
+      "type": "design",
+      "placeholder": false,
+      "path": "specs/design-portfolio-pnl-breakdown.md",
+      "name": "Portfolio PnL Breakdown Design"
     },
     "module:portfolio-pnl": {
       "id": "module:portfolio-pnl",
@@ -80,7 +80,7 @@
           "sourceType": "frontmatter",
           "method": "frontmatter",
           "score": 0.9,
-          "detail": "Declared in specs/design-portfolio-pnl-breakdown.md depends_on",
+          "detail": "Declared in specs/design-portfolio-pnl-breakdown.md depends_on[relation=derives_from]",
           "isNegative": false
         }
       ]
@@ -98,7 +98,7 @@
           "sourceType": "frontmatter",
           "method": "frontmatter",
           "score": 0.9,
-          "detail": "Declared in specs/module-portfolio-pnl.md depends_on",
+          "detail": "Declared in specs/module-portfolio-pnl.md depends_on[relation=depends_on]",
           "isNegative": false
         }
       ]
@@ -116,7 +116,7 @@
           "sourceType": "frontmatter",
           "method": "frontmatter",
           "score": 0.9,
-          "detail": "Declared in specs/module-portfolio-pnl.md depends_on",
+          "detail": "Declared in specs/module-portfolio-pnl.md depends_on[relation=derives_from]",
           "isNegative": false
         }
       ]
@@ -125,7 +125,7 @@
       "id": 4,
       "sourceId": "test:strategy",
       "targetId": "module:portfolio-pnl",
-      "relation": "depends_on",
+      "relation": "derives_from",
       "semantic": "governance",
       "confidence": 0.9,
       "isActive": true,
@@ -134,7 +134,7 @@
           "sourceType": "frontmatter",
           "method": "frontmatter",
           "score": 0.9,
-          "detail": "Declared in specs/module-portfolio-pnl.md depended_by",
+          "detail": "Declared in specs/test-strategy.md depends_on[relation=derives_from]",
           "isNegative": false
         }
       ]
@@ -246,43 +246,7 @@
           "isNegative": false
         }
       ]
-    },
-    {
-      "id": 11,
-      "sourceId": "design:portfolio-pnl-breakdown",
-      "targetId": "req:portfolio-pnl-breakdown",
-      "relation": "depends_on",
-      "semantic": "governance",
-      "confidence": 0.9,
-      "isActive": true,
-      "evidence": [
-        {
-          "sourceType": "frontmatter",
-          "method": "frontmatter",
-          "score": 0.9,
-          "detail": "Declared in specs/req-portfolio-pnl-breakdown.md depended_by",
-          "isNegative": false
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "sourceId": "test:strategy",
-      "targetId": "module:portfolio-pnl",
-      "relation": "derives_from",
-      "semantic": "governance",
-      "confidence": 0.9,
-      "isActive": true,
-      "evidence": [
-        {
-          "sourceType": "frontmatter",
-          "method": "frontmatter",
-          "score": 0.9,
-          "detail": "Declared in specs/test-strategy.md depends_on",
-          "isNegative": false
-        }
-      ]
     }
   ],
-  "lastScanAt": "2026-04-02T02:55:26.989Z"
+  "lastScanAt": "2026-04-02T06:00:00.000Z"
 }
