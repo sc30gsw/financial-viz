@@ -8,7 +8,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts'
-import type { TooltipProps } from 'recharts'
 import type { CompanyFinancials } from '../types/financial'
 import { formatValue, formatValueShort } from '../utils/format'
 
@@ -36,7 +35,10 @@ function CustomTooltip({
   label,
   currencyMap,
   usdJpy,
-}: TooltipProps<number, string> & {
+}: {
+  active?: boolean
+  payload?: Array<any>
+  label?: string
   currencyMap: Record<string, 'JPY' | 'USD'>
   usdJpy: number | undefined
 }) {
@@ -44,7 +46,7 @@ function CustomTooltip({
   return (
     <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3 shadow-lg min-w-44">
       <p className="font-semibold text-gray-700 dark:text-gray-200 mb-2 text-sm">{label}年</p>
-      {payload.map(entry => {
+      {payload.map((entry: any) => {
         const key = entry.dataKey as string
         const originalCurrency = currencyMap[key] ?? 'USD'
         const isConverted = originalCurrency === 'USD' && usdJpy != null

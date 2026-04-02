@@ -61,7 +61,7 @@ export default function RevenueChart({ data, metric = 'revenue' }: RevenueChartP
             width={72}
           />
           <Tooltip
-            formatter={(value: number) => [formatValue(value, currency), METRIC_LABELS[metric]]}
+            formatter={(value) => [formatValue(value as number, currency), METRIC_LABELS[metric]]}
             labelFormatter={label => `${label}年`}
           />
           <Legend />

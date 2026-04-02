@@ -1,5 +1,5 @@
 import YahooFinance from 'yahoo-finance2'
-import type { FundamentalsTimeSeriesFinancialsResult } from 'yahoo-finance2/esm/src/modules/fundamentalsTimeSeries.js'
+import type { FundamentalsTimeSeriesFinancialsResult } from 'yahoo-finance2/modules/fundamentalsTimeSeries'
 import type { CompanyFinancials, IncomeStatement, StockQuote } from '../types/financial'
 
 const yahooFinance = new YahooFinance({ suppressNotices: ['yahooSurvey'] })
