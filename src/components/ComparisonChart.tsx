@@ -11,7 +11,7 @@ import {
 import type { CompanyFinancials } from '../types/financial'
 import { formatValue, formatValueShort } from '../utils/format'
 
-const COLORS = ['#6366f1', '#f59e0b', '#10b981', '#ef4444', '#8b5cf6']
+const COLORS = ['#6366f1', '#f59e0b', '#10b981', '#ef4444', '#8b5cf6'] as const satisfies string[]
 
 interface ComparisonChartProps {
   companies: CompanyFinancials[]
@@ -23,7 +23,7 @@ const METRIC_LABELS = {
   revenue: '売上高',
   operatingIncome: '営業利益',
   netIncome: '純利益',
-}
+} as const satisfies Record<string, string>
 
 function toJpy(value: number, currency: 'JPY' | 'USD', usdJpy: number): number {
   return currency === 'USD' ? value * usdJpy : value

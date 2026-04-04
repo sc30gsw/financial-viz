@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { upfetch } from '../api/fetch-client'
+import { upfetch } from '../libs/upfetch'
 import type { StockQuote } from '../types/financial'
 
 export function useExchangeRate(): number | undefined {
