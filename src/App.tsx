@@ -1,15 +1,17 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
+import { Shimmer } from 'shimmer-from-structure'
 import CompanySelector from './components/CompanySelector'
-import ComparisonChart from './components/ComparisonChart'
-import TrendChart from './components/TrendChart'
 import StrategyPanel from './components/StrategyPanel'
-import RevenueChart from './components/RevenueChart'
-import PortfolioBreakdownPanel from './components/PortfolioBreakdownPanel'
 import { useFinancialQuery } from './hooks/useFinancialQuery'
 import { useExchangeRate } from './hooks/useExchangeRate'
 import { usePortfolioQuoteQuery } from './hooks/usePortfolioQuoteQuery'
 import type { PortfolioHoldingInput } from './utils/portfolio-pnl'
+import PortfolioBreakdownPanel from './components/PortfolioBreakdownPanel'
 import './index.css'
+
+const ComparisonChart = lazy(() => import('./components/ComparisonChart'))
+const RevenueChart = lazy(() => import('./components/RevenueChart'))
+const TrendChart = lazy(() => import('./components/TrendChart'))
 
 type Metric = 'revenue' | 'operatingIncome' | 'netIncome'
 
@@ -52,24 +54,16 @@ function App() {
         <CompanySelector selected={selectedTickers} onChange={setSelectedTickers} />
 
         {selectedTickers.length > 0 && (
-          <PortfolioBreakdownPanel
-            selectedTickers={selectedTickers}
-            holdings={holdings}
-            quotes={quoteQuery.data}
-            usdJpy={usdJpy}
-            isLoading={quoteQuery.isLoading}
-            error={quoteQuery.error}
-            onHoldingChange={handleHoldingChange}
-          />
-        )}
-
-        {isLoading && (
-          <div className="flex items-center justify-center h-32 text-gray-400">
-            <div className="flex gap-2 items-center">
-              <div className="w-4 h-4 rounded-full bg-indigo-400 animate-pulse" />
-              <span>データを取得中...</span>
-            </div>
-          </div>
+          <Shimmer loading={quoteQuery.isLoading}>
+            <PortfolioBreakdownPanel
+              selectedTickers={selectedTickers}
+              holdings={holdings}
+              quotes={quoteQuery.data}
+              usdJpy={usdJpy}
+              error={quoteQuery.error}
+              onHoldingChange={handleHoldingChange}
+            />
+          </Shimmer>
         )}
 
         {error && (
@@ -96,42 +90,64 @@ function App() {
           </div>
         )}
 
-        {data.length > 0 && (
-          <>
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4">
-              <ComparisonChart companies={data} metric={metric} usdJpy={usdJpy} />
-            </div>
+        {selectedTickers.length > 0 && (
+          <Shimmer loading={isLoading}>
+            {data.length > 0 ? (
+              <div className="space-y-6">
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4">
+                  <Suspense fallback={null}>
+                    <ComparisonChart companies={data} metric={metric} usdJpy={usdJpy} />
+                  </Suspense>
+                </div>
 
-            {data.length === 1 && (
-              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4">
-                <h3 className="text-lg font-semibold mb-2 text-gray-700 dark:text-gray-200">
-                  売上推移
-                </h3>
-                <RevenueChart data={data[0]} metric={metric} />
+                {data.length === 1 && (
+                  <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4">
+                    <h3 className="text-lg font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                      売上推移
+                    </h3>
+                    <Suspense fallback={null}>
+                      <RevenueChart data={data[0]} metric={metric} />
+                    </Suspense>
+                  </div>
+                )}
+
+                {data.length >= 2 && (
+                  <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4">
+                    <h3 className="text-lg font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                      時系列トレンド比較
+                    </h3>
+                    <Suspense fallback={null}>
+                      <TrendChart companies={data} metric={metric} usdJpy={usdJpy} />
+                    </Suspense>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {data.map(company => (
+                    <StrategyPanel
+                      key={company.company.ticker}
+                      data={company}
+                      sector={company.company.sector}
+                      industry={company.company.industry}
+                      usdJpy={usdJpy}
+                    />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              // 初回ロード時のプレースホルダー（データなし）
+              <div className="space-y-6">
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4">
+                  <div className="h-8 w-48 rounded mb-4 bg-gray-100 dark:bg-gray-700" />
+                  <div className="h-80 rounded bg-gray-100 dark:bg-gray-700" />
+                </div>
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4">
+                  <div className="h-8 w-48 rounded mb-4 bg-gray-100 dark:bg-gray-700" />
+                  <div className="h-80 rounded bg-gray-100 dark:bg-gray-700" />
+                </div>
               </div>
             )}
-
-            {data.length >= 2 && (
-              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-4">
-                <h3 className="text-lg font-semibold mb-2 text-gray-700 dark:text-gray-200">
-                  時系列トレンド比較
-                </h3>
-                <TrendChart companies={data} metric={metric} usdJpy={usdJpy} />
-              </div>
-            )}
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {data.map(company => (
-                <StrategyPanel
-                  key={company.company.ticker}
-                  data={company}
-                  sector={company.company.sector}
-                  industry={company.company.industry}
-                  usdJpy={usdJpy}
-                />
-              ))}
-            </div>
-          </>
+          </Shimmer>
         )}
 
         {selectedTickers.length === 0 && (

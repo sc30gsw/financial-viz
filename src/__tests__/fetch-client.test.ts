@@ -18,21 +18,21 @@ describe('fetch-client', () => {
       json: () => Promise.resolve({}),
       body: null,
     }))
-    const { upfetch } = await import('../api/fetch-client')
+    const { upfetch } = await import('../libs/upfetch')
     expect(upfetch).toBeDefined()
     expect(typeof upfetch).toBe('function')
   })
 
   it('should propagate network errors', async () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('Failed to fetch')))
-    const { upfetch } = await import('../api/fetch-client')
+    const { upfetch } = await import('../libs/upfetch')
     await expect(upfetch('/financials/INVALID')).rejects.toThrow()
   })
 
   it('should invoke underlying fetch when called', async () => {
     const mockFetch = vi.fn().mockRejectedValue(new TypeError('test-sentinel'))
     vi.stubGlobal('fetch', mockFetch)
-    const { upfetch } = await import('../api/fetch-client')
+    const { upfetch } = await import('../libs/upfetch')
 
     try { await upfetch('/financials/AAPL') } catch { /* expected rejection */ }
 

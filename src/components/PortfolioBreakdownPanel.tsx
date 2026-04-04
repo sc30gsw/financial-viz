@@ -12,7 +12,6 @@ interface PortfolioBreakdownPanelProps {
   holdings: Record<string, PortfolioHoldingInput>
   quotes: Record<string, StockQuote>
   usdJpy?: number
-  isLoading?: boolean
   error?: Error | null
   onHoldingChange: (
     ticker: string,
@@ -49,7 +48,6 @@ export default function PortfolioBreakdownPanel({
   holdings,
   quotes,
   usdJpy,
-  isLoading = false,
   error = null,
   onHoldingChange,
 }: PortfolioBreakdownPanelProps) {
@@ -70,11 +68,6 @@ export default function PortfolioBreakdownPanel({
             取得単価は各銘柄の現地通貨建て、1株あたりで入力します。
           </p>
         </div>
-        {isLoading && (
-          <div className="text-xs font-medium text-indigo-600 dark:text-indigo-300">
-            価格を取得中...
-          </div>
-        )}
       </div>
 
       {error && (
@@ -98,9 +91,11 @@ export default function PortfolioBreakdownPanel({
                   <h4 className="font-semibold text-gray-900 dark:text-gray-100">{position.ticker}</h4>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
                     現在値:{' '}
-                    {position.quote
-                      ? formatNativePrice(position.quote.price, position.quote.currency)
-                      : '取得中...'}
+                    <span>
+                      {position.quote
+                        ? formatNativePrice(position.quote.price, position.quote.currency)
+                        : '—'}
+                    </span>
                   </p>
                 </div>
                 <span className="rounded-full bg-white px-2.5 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">

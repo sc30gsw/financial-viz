@@ -1,5 +1,5 @@
 import { useQueries, keepPreviousData } from '@tanstack/react-query'
-import { upfetch } from '../api/fetch-client'
+import { upfetch } from '../libs/upfetch'
 import type { CompanyFinancials } from '../types/financial'
 
 interface UseFinancialQueryResult {
