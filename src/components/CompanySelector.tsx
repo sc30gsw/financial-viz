@@ -3,14 +3,14 @@ interface Company {
   label: string
 }
 
-const PRESET_COMPANIES: Company[] = [
+const PRESET_COMPANIES = [
   { ticker: '7203.T', label: 'トヨタ自動車 (7203.T)' },
   { ticker: '9984.T', label: 'ソフトバンクG (9984.T)' },
   { ticker: '6758.T', label: 'ソニーグループ (6758.T)' },
   { ticker: 'AAPL', label: 'Apple (AAPL)' },
   { ticker: 'MSFT', label: 'Microsoft (MSFT)' },
   { ticker: 'GOOGL', label: 'Alphabet (GOOGL)' },
-]
+] as const satisfies readonly Company[]
 
 interface CompanySelectorProps {
   selected: string[]
